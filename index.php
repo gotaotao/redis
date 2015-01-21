@@ -11,9 +11,6 @@
 	$sql = "select id,summary from jk_words";
 	$res = mysql_query($sql);
 	while($rows = mysql_fetch_assoc($res)){
-		echo "<pre>";
-		var_dump($rows);
-		exit;
 		$ress = $redis->set('doc:'.$rows['id'],'summary',$rows['summary']);
 		echo "yes <br/>";
 	}
