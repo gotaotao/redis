@@ -11,7 +11,7 @@
 	$sql = "select * from jk_words";
 	$res = mysql_query($sql);
 	while($rows = mysql_fetch_assoc($res)){
-		$ress = $redis->hset('doc:'.$rows['id'],'summary',$rows['summary']);
+		$ress = $redis->hmset('doc:'.$rows['id'],'summary',$rows['summary'],'mulu',$rows['mulu']);
 		if($ress){
 			echo "yes <br/>";
 		}else{
