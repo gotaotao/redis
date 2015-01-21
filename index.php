@@ -10,7 +10,7 @@
 	mysql_select_db('baike',$link);
 	$sql = "select id,summary from jk_words";
 	$res = mysql_query($sql);
-	while($rows = mysql_fetch_row($res)){
+	while($rows = mysql_fetch_assoc($res)){
 		echo "<pre>";
 		var_dump($rows);
 		exit;
